@@ -12,10 +12,11 @@ function CourseList(){
         <h3>course List</h3>
         <ul>
             {courses.map((course) => (
-                <CourseCard key="course.id" data={course}/>
+                <CourseCard key={course.id} data={course}/>
             ))}
                 </ul>
         </>
     );
 }
+
 export default CourseList

@@ -7,8 +7,7 @@ function App() {
 
   return (
       <>
-      <Counter />
-        {/* <Header />
+        <Header />
         <Banner
         title="botostart"
         description="This is a programming website"
@@ -16,7 +15,8 @@ function App() {
         />
         <p>React project</p>
         <Test />
-        <CourseList /> */}
+        <CourseList />
+       <Counter />
     </>
   )
 }
