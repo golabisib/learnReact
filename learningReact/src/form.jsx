@@ -28,7 +28,8 @@ function Form() {
     //     setRules((rules) => !rules);
     // }
     // login function
-    const loginHandler = () =>{
+    const submitHandler = (event) =>{
+        event.preventDefault();
         console.log({form})
     }
     // summery of up
@@ -51,6 +52,7 @@ function Form() {
     }
     return (
         <>
+        <form onSubmit={submitHandler}> {/*submit in this case causes the submit is also included applied when the enter key is press and when the submit or login button is clicked */}
         <input
             type="text"
             placeholder="Email"
@@ -78,7 +80,7 @@ function Form() {
                 id="male"
                 value="male"
                 onChange={changeHandler}
-                checked={true}
+                checked = {form.gender === "male"}
             />{ /*for select one of radios we named the group of options the same name */}
             <label htmlFor="female">Female</label>
             <input
@@ -86,6 +88,7 @@ function Form() {
                 name="gender"
                 id="female"
                 value="female"
+                checked = {form.gender === "female"}
                 onChange={changeHandler}
             />
             <label htmlFor="other">Other</label>
@@ -94,6 +97,7 @@ function Form() {
                 name="gender"
                 id="other"
                 value="other"
+                checked = {form.gender === "other"}
                 onChange={changeHandler}
             />
         </div>
@@ -104,7 +108,8 @@ function Form() {
             id="rules"
             onChange={changeHandler}
             checked = {form.rules}/>
-        <button onClick={loginHandler}>login</button>
+        <button type="submit">login</button>
+        </form>
         </>
         )
 }
