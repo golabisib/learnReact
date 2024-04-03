@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 function CourseCard({data:{name ,description}}) {
   return (
     <li>
@@ -15,3 +17,9 @@ export default CourseCard
 // {data.name}
 // 3- CourseCard({data:{name ,description}})
 // {name}
+CourseCard.propTypes = {
+    data: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    }).isRequired
+  };

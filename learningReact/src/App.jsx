@@ -26,12 +26,14 @@
         // export default App
 
         // season 5 and after it:
+import CourseList from "./Courselist.jsx"
 import Form from "./form.jsx"
 
         function App() {
 
     return (
     <>
+    <CourseList />
     <Form />
     </>
     )
