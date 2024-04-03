@@ -26,14 +26,20 @@
         // export default App
 
         // season 5 and after it:
-import CourseList from "./Courselist.jsx"
+import Banner from "./Banner.jsx"
 import Form from "./form.jsx"
 
         function App() {
 
     return (
     <>
-    <CourseList />
+    <Banner
+        title="botostart"
+        description="This is a programming website"
+        numOfStudent={5000}
+        />
+        <br />
+        <hr />
     <Form />
     </>
     )

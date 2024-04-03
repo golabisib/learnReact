@@ -19,7 +19,7 @@ export default CourseCard
 // {name}
 CourseCard.propTypes = {
     data: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired
     }).isRequired
-  };
+};

@@ -4,7 +4,8 @@ import CourseCard from "./courseCard.jsx";
 import styles from "./Courselist.module.css"
 function CourseList(){
 
-    const [selected, setSelected] = useState(false);
+    const [selected,] = useState(true);
+
     const courses = [
         {id: 1 , name:"React", description:"This is React course"},
         {id: 2 , name:"JavaScript", description:"This is Js course"},
