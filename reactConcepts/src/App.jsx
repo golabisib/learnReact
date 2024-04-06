@@ -1,6 +1,7 @@
 //component composition
 
 // import Parent from "./Component/Parent"
+import WellcomeMessage from "./WellcomeMessage"
 import WellcomePage from "./WellcomePage"
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
     <>
     <h1>React Concepts</h1>
     {/* <Parent /> */}
-    <WellcomePage userName="Roozbeh"/>
+    <WellcomePage>
+        <WellcomeMessage userName="Roozbeh"/>
+    </WellcomePage>
     </>
   )
 }

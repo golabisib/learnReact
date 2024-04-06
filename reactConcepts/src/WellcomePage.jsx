@@ -1,17 +1,18 @@
 import PropTypes from "prop-types"
-import WellcomeMessage from "./WellcomeMessage"
+// import WellcomeMessage from "./WellcomeMessage"
 
 
-function WellcomePage({ userName }) {
+function WellcomePage({ children }) {
   return (
     <div>
         <p>Golabi</p>
-        <WellcomeMessage userName={userName}/>
+        {children}
     </div>
   )
 }
 
 WellcomePage.propTypes = {
+  children: PropTypes.any,
   userName: PropTypes.any
 }
 
