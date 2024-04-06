@@ -1,4 +1,7 @@
-import Parent from "./Component/Parent"
+//component composition
+
+// import Parent from "./Component/Parent"
+import WellcomePage from "./WellcomePage"
 
 function App() {
 
@@ -6,7 +9,8 @@ function App() {
   return (
     <>
     <h1>React Concepts</h1>
-    <Parent />
+    {/* <Parent /> */}
+    <WellcomePage userName="Roozbeh"/>
     </>
   )
 }
