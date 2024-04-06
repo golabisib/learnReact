@@ -2,7 +2,7 @@
 
 import PropTypes from "prop-types"
 function ChildA({number, setNumber}) {
-
+// SetNumber is passing function as props
 
   return (
     <div style={{border: "2px solid black", padding:"10px", margin: "20px"}}>
