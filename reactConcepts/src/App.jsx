@@ -10,6 +10,5 @@ function App() {
     </>
   )
 }
-//82
 
 export default App

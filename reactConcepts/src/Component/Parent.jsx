@@ -1,7 +1,9 @@
 import PropTypes from "prop-types"
+import { useState } from "react"
+;
 import ChildA from "./childA"
 import ChildB from "./ChildB"
-import { useState } from "react";
+import StyledDiv from "./StyledDiv";
 
 
 
@@ -13,10 +15,12 @@ function Parent() {
         setNumber((number) => number + 1)
     };
   return (
-    <div style={{border: "2px solid black", padding:"10px", margin: "20px"}}>
+      <div>
+        <StyledDiv>
         <h3>Parent</h3>
         <ChildA number={number} setNumber={setNumber} />
         <ChildB number={number} setNumber={setNumber} button={<Button clickHandler={clickHandler} />}/>
+        </StyledDiv>
     </div>
   )
 }

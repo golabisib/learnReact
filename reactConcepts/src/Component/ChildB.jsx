@@ -1,14 +1,17 @@
 
 
 import PropTypes from "prop-types"
+import StyledDiv from "./StyledDiv"
 function ChildB({number, button}) {
     //text is passing JSX as props
 
   return (
-    <div style={{border: "2px solid black", padding:"10px", margin: "20px"}}>
+    <div>
+        <StyledDiv>
         <h3>Child B</h3>
         <p>{number}</p>
         {button}
+        </StyledDiv>
     </div>
   )
 }
