@@ -11,7 +11,8 @@ function Parent() {
     <div style={{border: "2px solid black", padding:"10px", margin: "20px"}}>
         <h3>Parent</h3>
         <ChildA number={number} setNumber={setNumber} />
-        <ChildB number={number} setNumber={setNumber} />
+        <ChildB number={number} setNumber={setNumber} text={<button onClick=
+        {() => setNumber((number) => number + 1)}>Increase</button>}/>
     </div>
   )
 }
