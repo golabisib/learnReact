@@ -9,10 +9,9 @@ function Users() {
   useEffect( () => {
     async function fetchUsers() {
         try {
-        const response = await fetch(`htTps://jsonplaceholder.typicode.com/users/${id}`)
+        const response = await fetch(`htTps://jsonplaceholder.typicode.com/users/`)
         const json = await response.json();
         setUsers(json);
-        console.log(json)
     } catch(error) {
         setError(true);
     }
@@ -21,18 +20,25 @@ function Users() {
   }, [id]);
   // top line in [] when need updating we write the updated state.
 
+  const searchHandler = async () =>{
+    const res = await fetch(`htTps://jsonplaceholder.typicode.com/users/${id}`);
+    const json = await res.json();
+    console.log(json);
+  }
+
   return (
     <div>
         <input  type="text"
                 placeholder="enter id"
                 value={id}
                 onChange={event => setId(event.target.value)}/>
+        <button onClick={searchHandler}>search</button>
         {!users.length && !error && <h3>loading...</h3>}
-        {/* <ul>
+        <ul>
             {users.map((user) => (
                 <li key={user.id}>{user.name}</li>
             ))}
-        </ul> */}
+        </ul>
         {error && <>Something went wrong!</>}
     </div>
   )
