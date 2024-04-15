@@ -1,5 +1,6 @@
 // useEffect
 import { useEffect, useState } from "react"
+import Counter from "./Counter";
 
 function Users() {
     const [users, setUsers] = useState([]);
@@ -28,6 +29,7 @@ function Users() {
 
   return (
     <div>
+        {id  > 10 && <Counter />} {/*if id is lower than 10 the counter component is unmounted */}
         <input  type="text"
                 placeholder="enter id"
                 value={id}
