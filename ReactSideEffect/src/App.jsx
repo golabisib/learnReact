@@ -1,13 +1,15 @@
 
-import Users from "./components/Users"
+import Photos from "./components/Photos"
+// import Users from "./components/Users"
 
 function App() {
 
   return (
     <>
-    <Users />
+    {/* <Users /> */}
+    <Photos />
     </>
   )
 }
-//120
+
 export default App
