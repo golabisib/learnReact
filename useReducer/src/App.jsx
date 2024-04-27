@@ -27,22 +27,21 @@ function App() {
     const [state, dispatch] = useReducer(reducer, initialState);
     // const [count, setCount] = useState(0)
 
-
     const increaseHandler = () =>{
         // setCount((count) => count + 1)
-        dispatch({type: "increase"});
+        dispatch({ type: "increase" });
     };
     const increaseByAmountHandler = () =>{
         // setCount((count) => count + 1)
-        dispatch({type: "increaseByAmount", payload : 10 });
+        dispatch({ type: "increaseByAmount", payload : 10 });
     };
     const resetHandler = () =>{
         // setCount(0)
-        dispatch({type: "reset"});
+        dispatch({ type: "reset" });
     };
     const decreaseHandler = () =>{
         // setCount((count) => count - 1)
-        dispatch({type: "decrease"})
+        dispatch({ type: "decrease" })
     };
 
   return (
