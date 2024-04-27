@@ -3,9 +3,17 @@ import { useReducer } from 'react';
 
 const reducer = (state, action) => {
     console.log({state, action})
-    if (action === "increase") return state + 1;
-    if (action === "reset") return 0;
-    if (action === "decrease") return state - 1;
+    switch (action){
+        case "increase":
+            return state + 1;
+        case "reset":
+            return 0;
+        case "decrease":
+            return state - 1;
+        default:
+            throw new Error("Invalid Action")
+
+    }
 };
 
 function App() {
