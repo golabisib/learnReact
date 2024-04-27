@@ -15,7 +15,7 @@ function Photos() {
     <div>
         <h1>Botostart</h1>
         {isShow && <h3>{text}</h3>}
-        <button onClick={clickHandler}>Toggle</button>
+        <button onClick={clickHandler} type="button" >Toggle</button>
     </div>
   )
 }
