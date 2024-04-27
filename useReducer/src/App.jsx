@@ -1,17 +1,21 @@
 import { useState } from 'react'
 import { useReducer } from 'react';
 
+const initialState = { count: 0, number: 1};
+
 const reducer = (state, action) => {
     console.log({state, action})
     switch (action.type){
         case "increase":
-            return state + 1;
+            return { ...state, count: state.count + 1};
         case "increaseByAmount":
-            return state + action.payload;
+            return { ...state, count: state.count + action.payload };
         case "reset":
-            return 0;
+            return { ...state, count: 0};
         case "decrease":
-            return state - 1;
+            return { ...state, count: state.count - 1 };
+        case "up":
+            return { ...state, number: state.number + 1 };
         default:
             throw new Error("Invalid Action")
 
@@ -20,7 +24,7 @@ const reducer = (state, action) => {
 
 function App() {
     // state management
-    const [count, dispatch] = useReducer(reducer, 0)
+    const [state, dispatch] = useReducer(reducer, initialState);
     // const [count, setCount] = useState(0)
 
 
@@ -48,7 +52,10 @@ function App() {
       <button type='button' onClick={increaseByAmountHandler}>Increase By Amount</button>
       <button type='button' onClick={resetHandler}>Reset</button>
       <button type='button' onClick={decreaseHandler}>Decrease</button>
-      <span>{count}</span>
+      <span>{state.count}</span>
+      <hr />
+      <p>{state.number}</p>
+      <button type='button' onClick={() => dispatch({type: "up"})}>Up</button>
     </>
   )
 }
