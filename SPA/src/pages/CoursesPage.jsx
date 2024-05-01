@@ -1,9 +1,11 @@
+import NavBar from "../components/NavBar"
 
 
 function CoursesPage() {
   return (
     <div>
-        courses
+        <NavBar />
+        <h1>courses</h1>
     </div>
   )
 }

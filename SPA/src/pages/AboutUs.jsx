@@ -1,9 +1,11 @@
+import NavBar from "../components/NavBar"
 
 
 function AboutUs() {
   return (
     <div>
-        About Us
+        <NavBar />
+        <h1>About Us</h1>
     </div>
   )
 }
