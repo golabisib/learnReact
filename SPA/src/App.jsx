@@ -5,7 +5,7 @@ import AboutUs from "./pages/AboutUs";
 import PageNotFound from "./pages/404";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
-
+import { Navigate } from "react-router-dom";
 function App() {
 
 
@@ -13,6 +13,7 @@ function App() {
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/landing" element={<Navigate to="/" replace />} /> 
             <Route path="/courses" element={<CoursesPage />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/:id" element={<ProductDetailPage />} />
