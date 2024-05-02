@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar"
 import { Link } from "react-router-dom"
 import { useSearchParams } from "react-router-dom"
-
+import { useNavigate } from "react-router-dom"
 const Products = [
     {id: 1 , name: "Product 1"},
     {id: 2 , name: "Product 2"},
@@ -11,17 +11,24 @@ const Products = [
 
 function ProductsPage() {
     const [searchParams, setSearchParams] = useSearchParams();
+    const navigate = useNavigate();
 
     //get:
     const sortBy = searchParams.get("sortBy");
     const order = searchParams.get("order");
-    console.log(searchParams.toString())
-    console.log({sortBy, order})
 
     //set:
     const sortHandler = () => {
         setSearchParams({sortBy: "price", order: "asc"})
     };
+
+    const homeHandler = () => {
+        navigate("/");
+        // in navigate(A)
+        // A = -1 -> one page prev
+        // A = +1 -> one page next
+        // in A ("/", { replace: true }) catch is clear and prev is deleted
+    }
 
   return (
     <div>
@@ -34,6 +41,7 @@ function ProductsPage() {
             </li>
         ))}
         </ul>
+        <button onClick={homeHandler}>Go Home</button>
     </div>
   )
 }
