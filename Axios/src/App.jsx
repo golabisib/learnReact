@@ -4,13 +4,16 @@ import axios from "axios";
 import Post from "./components/Post";
 import Delete from "./components/Delete";
 import Put from "./components/Put";
+import api from "./services/config";
 
 function App() {
 	const [todos, setTodos] = useState([]);
 	useEffect(() => {
-		axios
-		.get("https://jsonplaceholder.typicode.com/todos")
-		.then( (res) => setTodos(res.data));
+		api.get("/todos").then((res) => console.log(res));
+
+		// axios
+		// .get("https://jsonplaceholder.typicode.com/todos")
+		// .then( (res) => setTodos(res.data));
 		// axios
 		// 	.all([
 		// 		axios.get("https://jsonplaceholder.typicode.com/todos"),
