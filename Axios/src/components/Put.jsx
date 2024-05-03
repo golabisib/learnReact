@@ -16,6 +16,7 @@ function Put() {
         axios
         .put(`https://jsonplaceholder.typicode.com/posts/${id}` , { title })
         .then( (res) => (console.log(res)))
+        .catch( (error) => console.log(error));
     }
   return (
     <div>
