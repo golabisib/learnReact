@@ -3,10 +3,11 @@ import { useRef } from "react"
 
 function RefComponent() {
     const number = useRef(0);
-    console.log(number)
+    console.log("render")
 
-    const clickHandler = (number) => {
-        number.current = 5;
+    const clickHandler = () => {
+        number.current = number.current + 5;
+        console.log(number)
     }
     return (
         <div>
