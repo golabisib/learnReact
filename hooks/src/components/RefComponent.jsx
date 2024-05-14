@@ -1,19 +1,45 @@
-import { useRef } from "react"
-
+import { useRef, useState } from "react";
 
 function RefComponent() {
-    const number = useRef(0);
-    console.log("render")
+	console.log("render");
 
-    const clickHandler = () => {
-        number.current = number.current + 5;
-        console.log(number)
-    }
-    return (
-        <div>
-        <button type="button" onClick={clickHandler}>+</button>
-    </div>
-  )
+	const services = [
+		{ id: 1, title: "payment" },
+		{ id: 2, title: "Education" },
+		{ id: 3, title: "payment" },
+	];
+
+	const number = useRef(0);
+
+	const [counter, setCounter] = useState(0);
+
+	const numberHandler = () => {
+		number.current = number.current + 5;
+		services.push({ id: 2, title: "Education" });
+		console.log(number);
+		console.log(services);
+	};
+
+	const counterHandler = () => {
+		setCounter((counter) => counter + 1);
+	};
+
+	return (
+		<div>
+			<button type="button" onClick={numberHandler}>
+				+
+			</button>
+			<ul>
+				{services.map((s) => (
+					<li key={s.id}>{s.title}</li>
+				))}
+			</ul>
+			<p>{counter}</p>
+			<button type="button" onClick={counterHandler}>
+				+ counter
+			</button>
+		</div>
+	);
 }
 
-export default RefComponent
+export default RefComponent;
