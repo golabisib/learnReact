@@ -3,8 +3,8 @@
 // State
 // Context
 // Parent
-import { useState, useMemo } from "react";
-// import ChildComponent from "./ChildComponent";
+import { useState, useMemo, useCallback } from "react";
+import ChildComponent from "./ChildComponent";
 
 function MemoComponent() {
 	console.log("MemoComponent is rendered");
@@ -12,10 +12,14 @@ function MemoComponent() {
 	const [number, setNumber] = useState(0);
 
 	const slow = useMemo(() => {
-		for (let index = 0; index < 100000000 ; index++) {
+		for (let index = 0; index < 100000000; index++) {
 			return counter;
 		}
 	}, [counter]);
+
+	const clickHandler = useCallback(() => {
+		setNumber((number) => number + 1);
+	},[number])
 
 	return (
 		<div>
@@ -26,12 +30,12 @@ function MemoComponent() {
 			>
 				+
 			</button>
-			{/* <ChildComponent number={number} /> */}
+			<ChildComponent number={number} clickHandler={clickHandler} />
 
-			<p>{number}</p>
+			{/* <p>{number}</p>
 			<button type="button" onClick={() => setNumber((number) => number + 1)}>
 				+
-			</button>
+			</button> */}
 		</div>
 	);
 }

@@ -1,12 +1,18 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import { memo } from "react";
-function ChildComponent({ number }) {
+function ChildComponent({ number, clickHandler }) {
 	console.log("ChildComp is rendered");
 
-	return <div>Child {number}</div>;
+	return (
+		<div>
+			<h3> Child {number}</h3>
+            <button type="button" onClick={clickHandler}> + child</button>
+		</div>
+	);
 }
 
 ChildComponent.propTypes = {
+  clickHandler: PropTypes.any,
   number: PropTypes.any
 }
 
