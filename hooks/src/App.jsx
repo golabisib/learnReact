@@ -1,4 +1,5 @@
-import RefComponent from "./components/RefComponent"
+import MemoComponent from "./components/MemoComponent"
+// import RefComponent from "./components/RefComponent"
 
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
   return (
     <>
       golabi
-      <RefComponent />
+      {/* <RefComponent /> */}
+      <MemoComponent />
     </>
   )
 }
