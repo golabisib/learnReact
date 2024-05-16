@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function RefComponent() {
 	console.log("render");
@@ -10,8 +10,12 @@ function RefComponent() {
 	];
 
 	const number = useRef(0);
-
+	const input = useRef(null);
 	const [counter, setCounter] = useState(0);
+
+	useEffect(() => {
+        input.current.focus();
+    }, []);
 
 	const numberHandler = () => {
 		number.current = number.current + 5;
@@ -26,6 +30,8 @@ function RefComponent() {
 
 	return (
 		<div>
+			<input type="text" ref={input} />
+			<br />
 			<button type="button" onClick={numberHandler}>
 				+
 			</button>
