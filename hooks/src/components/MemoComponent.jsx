@@ -5,6 +5,7 @@
 // Parent
 import { useState, useMemo, useCallback } from "react";
 import ChildComponent from "./ChildComponent";
+import { useTitle } from "../hooks/useTitle";
 
 function MemoComponent() {
 	console.log("MemoComponent is rendered");
@@ -20,6 +21,8 @@ function MemoComponent() {
 	const clickHandler = useCallback(() => {
 		setNumber((number) => number + 1);
 	},[number])
+
+    useTitle("Memo Page")
 
 	return (
 		<div>
