@@ -20,7 +20,7 @@ function MemoComponent() {
 
 	const clickHandler = useCallback(() => {
 		setNumber((number) => number + 1);
-	},[number])
+	},[])
 
     useTitle("Memo Page")
 
