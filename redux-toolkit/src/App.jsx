@@ -1,10 +1,11 @@
+import Counter from "./component/counter"
 
 function App() {
 
 
   return (
     <>
-
+    <Counter />
     </>
   )
 }
