@@ -1,4 +1,5 @@
 import NumberComp from "./component/Number"
+import Users from "./component/Users"
 import Counter from "./component/counter"
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
     <Counter />
     <NumberComp />
+    <Users />
     </>
   )
 }
