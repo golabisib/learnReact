@@ -1,13 +1,18 @@
 import { gql } from "@apollo/client";
 
 const CREATE_USER = gql`
-    mutation {
+    mutation CreateUser(
+        $name: String!
+        $username: String!
+        $email: String!
+        $phone: String!
+        ) {
         createUser (
             input: {
-                name: "Roozbeh"
-                username: "Golabisib"
-                email: "roozbehJangjo@gmail.com"
-                phone: "09024995222"
+                name: $name
+                username: $username
+                email: $email
+                phone: $phone
             }
         ) {
             id,
@@ -18,4 +23,4 @@ const CREATE_USER = gql`
     }
 `;
 
-export { CREATE_USER }
+export { CREATE_USER };
