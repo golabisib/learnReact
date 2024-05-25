@@ -1,4 +1,5 @@
 import User from "./component/User"
+// import Users from "./component/Users"
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
     <>
     <h1>React + GraphQL</h1>
     <User />
+    {/* <Users /> */}
     </>
   )
 }

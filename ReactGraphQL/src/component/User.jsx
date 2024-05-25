@@ -1,16 +1,6 @@
-import { useQuery , gql} from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useState } from "react";
-
-const GET_USER = gql`
-    query getUser($id: ID!) {
-        user(id: $id) {
-            id,
-            name,
-            email,
-            phone
-        }
-    }
-`;
+import { GET_USER } from "../graphql/queries";
 
 function User() {
 	const [id, setId] = useState("");
@@ -19,9 +9,9 @@ function User() {
 		setId(e.target.value);
 	};
 
-	const { loading, data, error } = useQuery(GET_USER,{
-        variables: {id: id}
-    });
+	const { loading, data, error } = useQuery(GET_USER, {
+		variables: { id: id },
+	});
 
 	console.log({ loading, data, error });
 
@@ -34,6 +24,13 @@ function User() {
 				onChange={changeHandler}
 				placeholder="Enter ID"
 			/>
+			{data && (
+				<>
+					<h1>{data.user.name}</h1>
+					<h3>{data.user.email}</h3>
+					<h3>{data.user.phone}</h3>
+				</>
+			)}
 		</div>
 	);
 }
