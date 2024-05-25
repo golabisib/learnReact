@@ -1,11 +1,11 @@
-import Users from "./component/Users"
+import User from "./component/User"
 
 function App() {
 
   return (
     <>
     <h1>React + GraphQL</h1>
-    <Users />
+    <User />
     </>
   )
 }
