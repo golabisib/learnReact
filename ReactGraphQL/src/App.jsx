@@ -2,7 +2,9 @@
 // import Users from "./component/Users"
 // import UserOnClick from "./component/UserOnClick"
 
-import CreateUser from "./component/CreateUser"
+import UpdateUser from "./component/UpdateUser"
+
+// import CreateUser from "./component/CreateUser"
 
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
     {/* <User /> */}
     {/* <Users /> */}
     {/* <UserOnClick /> */}
-    <CreateUser />
+    {/* <CreateUser /> */}
+    <UpdateUser />
 
     </>
   )
